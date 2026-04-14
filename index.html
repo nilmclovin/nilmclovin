@@ -203,6 +203,14 @@ Mas quero que saiba que você foi real comigo em todos esses momentos, e isso n�
 Independentemente do que a gente é agora, eu só queria que você soubesse disso com sinceridade.
 `;
 
+const playlist = [
+  "musica1.mp3", // Dói sem tanto
+  "musica2.mp3", // The Truth Untold
+  "musica3.mp3"
+];
+
+let musicaAtual = 0;
+  
 function somPapel(){
   const ctx=new (window.AudioContext||window.webkitAudioContext)();
   const o=ctx.createOscillator();
@@ -226,14 +234,24 @@ function typeWriter(t,i=0){
 }
 
 function abrir(){
-  const env=document.getElementById("envelope");
-  const letter=document.getElementById("letter");
-  const musica=document.getElementById("musica");
+  const env = document.getElementById("envelope");
+  const letter = document.getElementById("letter");
+  const musica = document.getElementById("musica");
 
   env.classList.add("open");
   somPapel();
 
+  musica.src = playlist[musicaAtual];
   musica.play();
+
+  musica.onended = function(){
+    musicaAtual++;
+
+    if(musicaAtual < playlist.length){
+      musica.src = playlist[musicaAtual];
+      musica.play();
+    }
+  };
 
   setTimeout(()=>{
     letter.classList.add("show");
