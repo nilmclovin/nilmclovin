@@ -215,6 +215,18 @@ const playlist = ["musica.mp3", // Dói sem tanto
   "musica2.mp3", // The Truth Untold
 ];
 
+  const fotos = [
+  "foto1.jpg",
+  "foto2.jpg",
+  "foto3.jpg",
+  "foto4.jpg",
+  "foto5.jpg",
+  "foto6.jpg",
+  "foto7.jpg",
+  "foto8.jpg",
+  "foto9.jpg"
+];
+
 let musicaAtual = 0;
   
 function somPapel(){
@@ -414,17 +426,25 @@ document.getElementById("calendar").style.display="none";
   mem.innerHTML = `
     <h2>📸 Nossas Memórias</h2>
 
-    <div style="display:flex; gap:10px; overflow-x:auto;">
-      <img src="foto1.jpg" style="width:200px; border-radius:10px;">
-      <img src="foto2.jpg" style="width:200px; border-radius:10px;">
-      <img src="foto3.jpg" style="width:200px; border-radius:10px;">
-      <img src="foto4.jpg" style="width:200px; border-radius:10px;">
-      <img src="foto5.jpg" style="width:200px; border-radius:10px;">
-      <img src="foto6.jpg" style="width:200px; border-radius:10px;">
-      <img src="foto7.jpg" style="width:200px; border-radius:10px;">
-      <img src="foto8.jpg" style="width:200px; border-radius:10px;">
-      <img src="foto9.jpg" style="width:200px; border-radius:10px;">
-    </div>
+    let imagensHTML = "";
+
+fotos.forEach(foto => {
+  imagensHTML += `<img src="${foto}" style="width:200px; border-radius:10px;">`;
+});
+
+mem.innerHTML = `
+  <h2>📸 Nossas Memórias</h2>
+
+  <div style="display:flex; gap:10px; overflow-x:auto;">
+    ${imagensHTML}
+  </div>
+
+  <br>
+
+  <button class="time-button" onclick="voltarCarta()">
+    ⬅️ Voltar
+  </button>
+`;
 
     <br>
 
