@@ -184,10 +184,12 @@
 </div>
 
 <button class="time-button" onclick="maquinaDoTempo()">🕰️ Máquina do tempo</button>
-
+<button class="time-button" onclick="abrirMemorias()">📸 Memórias</button>
+  
 <div id="calendar"></div>
 <div id="memory"></div>
-
+<div id="memorias" style="display:none;"></div>
+  
 <script>
 
 const texto = `Meu amor, Sabrina,
@@ -395,6 +397,37 @@ function abrirMemoria(data){
   memory.innerHTML=h[data]||"<h3>Memória vazia</h3>";
 }
 
+function abrirMemorias(){
+
+  document.body.classList.add("temporal");
+
+  document.getElementById("envelope").style.display="none";
+  document.getElementById("letter").style.display="none";
+  document.querySelector("h1").style.display="none";
+  document.querySelector("p").style.display="none";
+  document.getElementById("calendar").style.display="none";
+  document.getElementById("memory").style.display="none";
+
+  const mem = document.getElementById("memorias");
+  mem.style.display = "block";
+
+  mem.innerHTML = `
+    <h2>📸 Nossas Memórias</h2>
+
+    <div style="display:flex; gap:10px; overflow-x:auto;">
+      <img src="foto1.jpg" style="width:200px; border-radius:10px;">
+      <img src="foto2.jpg" style="width:200px; border-radius:10px;">
+      <img src="foto3.jpg" style="width:200px; border-radius:10px;">
+    </div>
+
+    <br>
+
+    <button class="time-button" onclick="voltarCarta()">
+      ⬅️ Voltar
+    </button>
+  `;
+}
+  
 function lerMais(){
 
   document.getElementById("calendar").style.display = "none";
