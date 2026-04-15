@@ -226,12 +226,14 @@ function somPapel(){
   o.stop(ctx.currentTime+0.2);
 }
 
-function typeWriter(t,i=0){
-  if(i<t.length){
-    document.getElementById("text").innerHTML+=t[i];
-    setTimeout(()=>typeWriter(t,i+1),15);
+function typeWriter(t, i = 0){
+  if(i < t.length){
+    document.getElementById("text").innerHTML += t[i];
+    setTimeout(()=>typeWriter(t, i + 1), 15);
   } else {
     document.getElementById("signature").classList.add("show");
+
+    // 👇 AQUI entra o botão
     document.getElementById("btnVoltaTempo").style.display = "block";
   }
 }
