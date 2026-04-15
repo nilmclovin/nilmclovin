@@ -295,6 +295,7 @@ function maquinaDoTempo(){
     <div class="date" onclick="abrirMemoria('2026-04-03')">3 de abril de 2026</div>
     <div class="date" onclick="abrirMemoria('2026-04-04')">4 de abril de 2026</div>
     <div class="date" onclick="abrirMemoria('2026-04-05')">5 de abril de 2026</div>
+    <button class="time-button" onclick="voltarCarta()">⬅️ Voltar para a carta</button>
   `;
 }
 
@@ -425,6 +426,23 @@ function voltarCalendario(){
   document.getElementById("calendar").style.display = "block";
 }
 
+function voltarCarta(){
+
+  // tira o modo temporal (cor de fundo)
+  document.body.classList.remove("temporal");
+
+  // mostra elementos iniciais
+  document.getElementById("envelope").style.display = "block";
+  document.getElementById("letter").style.display = "block";
+  document.querySelector("h1").style.display = "block";
+  document.querySelector("p").style.display = "block";
+
+  // esconde linha do tempo e memória
+  document.getElementById("calendar").style.display = "none";
+  document.getElementById("memory").style.display = "none";
+
+}
+  
 </script>
 
 </body>
