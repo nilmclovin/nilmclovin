@@ -268,7 +268,11 @@ function abrir(){
 
 function acaoEspecial(){
 
+  // evita duplicar
+  if(document.getElementById("caixaFinal")) return;
+
   const caixa = document.createElement("div");
+  caixa.id = "caixaFinal";
 
   caixa.innerHTML = `
     <div style="
@@ -300,14 +304,10 @@ function acaoEspecial(){
   document.body.appendChild(caixa);
 }
 
-function fecharCaixa(){
-  const caixas = document.querySelectorAll("body > div");
-  caixas.forEach(c => {
-    if(c.innerHTML.includes("Última mensagem")){
-      c.remove();
-    }
-  });
-}
+  function fecharCaixa(){
+  const caixa = document.getElementById("caixaFinal");
+  if(caixa) caixa.remove();
+  }
   
 function maquinaDoTempo(){
 
