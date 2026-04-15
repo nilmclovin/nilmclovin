@@ -175,6 +175,10 @@
 <div class="letter" id="letter">
   <div id="text"></div>
   <div class="signature" id="signature">— Nicholas</div>
+
+  <button class="btn-roxo" id="btnVoltaTempo" onclick="acaoEspecial()" style="display:none;">
+    ⏳ Aperte quando voltar da viagem no tempo!
+  </button>
 </div>
 
 <button class="time-button" onclick="maquinaDoTempo()">🕰️ Máquina do tempo</button>
@@ -228,6 +232,7 @@ function typeWriter(t,i=0){
     setTimeout(()=>typeWriter(t,i+1),15);
   } else {
     document.getElementById("signature").classList.add("show");
+    document.getElementById("btnVoltaTempo").style.display = "block";
   }
 }
 
@@ -257,6 +262,10 @@ function abrir(){
   },700);
 }
 
+function acaoEspecial(){
+  alert("Eu venho pensando muito em tudo que a gente viveu... e, mais do que isso, em como as coisas mudaram. Não de um jeito brusco, mas aos poucos, quase sem a gente perceber. E talvez seja justamente isso que mais pesa. Eu não quero te pressionar, nem te colocar em uma posição onde você se sinta obrigada a sentir algo por mim. Sentimento não funciona assim, eu sei. Não dá pra forçar, não dá pra pedir, não dá pra negociar. E eu respeito isso, de verdade. Mas ao mesmo tempo, eu não consigo fingir que não sinto falta. Falta do jeito que a gente era, das conversas leves, dos momentos simples que pareciam tão naturais. Falta de quando tudo entre a gente parecia mais... vivo. Eu não tô aqui tentando te convencer de nada. Só queria que você soubesse que, mesmo entendendo que as coisas mudam, uma parte de mim ainda guarda com carinho o que a gente tinha. E, sendo sincero, ainda desejaria que aquilo pudesse existir de novo, nem que fosse aos poucos, no tempo certo. Se não for possível, tudo bem. Eu deveria ter tentado mais. Mas seria mentira dizer que eu não gostaria de tentar. E talvez o que mais me confunde é não saber exatamente onde a gente se perdeu. Se foi em um detalhe pequeno que virou distância, ou se foram várias coisas silenciosas se acumulando. Às vezes parece que ainda tá tudo ali, só coberto por algo que a gente não conseguiu resolver. Eu também não quero apagar o que você sente agora, nem diminuir o que mudou dentro de você. Cada pessoa tem seu tempo, suas próprias respostas... e eu sei que nem sempre elas coincidem. Só que, mesmo entendendo isso, ainda existe em mim aquela vontade de olhar pra gente e pensar “isso ainda pode dar certo”. Não precisa ser como antes de uma vez só. Não precisa voltar correndo pro que a gente era. Mas talvez... só talvez... se ainda existir alguma dúvida aí dentro, alguma lembrança que ainda faça sentido, a gente poderia tentar se reencontrar devagar. Sem pressão, sem cobrança. Só sendo a gente, como já foi um dia. As ligações, as risadas, os filmes, as conversas, eu não sei em que momento tudo se esfriou... Mas eu gostaria que a gente tentasse passar por essa fase, juntos. E se isso não fizer sentido pra você, eu vou ter que tentar entender. Porque gostar de alguém também é saber quando não insistir além do que o outro pode oferecer. Só que eu não queria ficar em silêncio sem pelo menos te mostrar que, aqui dentro, ainda existe verdade, ainda existe cuidado... e ainda existe você em meus pensamentos, em meu coração e também na minha vida. Eu te amo, Sabrina. 💜");
+}
+  
 function maquinaDoTempo(){
 
   document.body.classList.add("temporal");
