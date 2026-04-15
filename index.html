@@ -275,34 +275,22 @@ function acaoEspecial(){
   caixa.id = "caixaFinal";
 
   caixa.innerHTML = `
-    <div style="
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: white;
-      color: black;
-      padding: 20px;
-      border-radius: 10px;
-      width: 85%;
-      max-width: 500px;
-      z-index: 9999;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    ">
-      <h2>💜 Última mensagem</h2>
+  <h2>💜 Eu te quero para sempre!</h2>
 
-      <p>
-        COLOCA SUA MENSAGEM AQUI SEM LIMITES.
-      </p>
+  <p>
+    SUA MENSAGEM GRANDE AQUI...
+  </p>
 
-      <button onclick="fecharCaixa()" class="btn-roxo">
-        Fechar
-      </button>
-    </div>
-  `;
+  <button class="btn-roxo" onclick="abrirEnquete()">
+    💭 Responder isso...
+  </button>
 
-  document.body.appendChild(caixa);
-}
+  <br><br>
+
+  <button onclick="this.parentElement.remove()" class="btn-roxo">
+    Fechar
+  </button>
+`;
 
   function fecharCaixa(){
   const caixa = document.getElementById("caixaFinal");
